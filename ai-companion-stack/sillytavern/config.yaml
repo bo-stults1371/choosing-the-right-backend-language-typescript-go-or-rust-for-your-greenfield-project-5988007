@@ -1,0 +1,28 @@
+# SillyTavern remote-access config. init.sh installs it into the persistent
+# config dir on every start and injects the credentials from
+# ST_BASIC_AUTH_USER / ST_BASIC_AUTH_PASSWORD. Keys not listed here are filled
+# with upstream defaults by SillyTavern at startup.
+dataRoot: ./data
+listen: true
+listenAddress:
+  ipv4: 0.0.0.0
+  ipv6: '[::]'
+protocol:
+  ipv4: true
+  ipv6: false
+port: 8000
+browserLaunch:
+  enabled: false
+# IP whitelist off: with it on, only localhost passes. Basic auth is the gate.
+whitelistMode: false
+basicAuthMode: true
+basicAuthUser:
+  username: "__ST_BASIC_AUTH_USER__"
+  password: "__ST_BASIC_AUTH_PASSWORD__"
+# Disabled so pod proxy hostnames (e.g. *.proxy.runpod.net) are accepted.
+hostWhitelist:
+  enabled: false
+  scan: true
+  hosts: []
+enableUserAccounts: false
+securityOverride: false
