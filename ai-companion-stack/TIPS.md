@@ -89,3 +89,31 @@ Plug icon → **Text Completion** → **llama.cpp** → `http://127.0.0.1:8080` 
 | Image request fails instantly | Wrong sampler or size too large for free Horde |
 | Image banner disappears with no picture | Model queue too long; pick a widely served model |
 | Page will not load | The pod has stopped or its address changed |
+
+## Where to learn more
+
+### Community
+
+- [r/SillyTavernAI](https://www.reddit.com/r/SillyTavernAI/): the SillyTavern subreddit; setups, presets and troubleshooting.
+- [SillyTavern Discord](https://discord.gg/sillytavern): the official server, linked from the documentation.
+- [SillyTavern on GitHub](https://github.com/SillyTavern/SillyTavern): source code, releases and the issue tracker.
+
+### Writing characters
+
+- [Character Design](https://docs.sillytavern.app/usage/core-concepts/characterdesign/) (official): what each card field does.
+- [Ali:Chat guide](https://rentry.co/alichat): defining a character through example dialogue.
+- [kingbri's character guide](https://rentry.co/kingbri-chara-guide): a minimal, practical walk-through.
+- [Trappu's guide](https://wikia.schneedc.com/bot-creation/trappu/creation): Ali:Chat combined with compact trait lists.
+
+### Official documentation by feature
+
+- [World Info / Lorebooks](https://docs.sillytavern.app/usage/core-concepts/worldinfo/)
+- [Author's Note](https://docs.sillytavern.app/usage/core-concepts/authors-note/)
+- [Personas](https://docs.sillytavern.app/usage/core-concepts/personas/)
+- [Group Chats](https://docs.sillytavern.app/usage/core-concepts/groupchats/)
+- [Summarize](https://docs.sillytavern.app/extensions/summarize/)
+- [Chat Vectorization](https://docs.sillytavern.app/extensions/chat-vectorization/)
+- [Data Bank](https://docs.sillytavern.app/usage/core-concepts/data-bank/)
+- [Character Expressions](https://docs.sillytavern.app/extensions/expression-images/)
+- [Image Generation](https://docs.sillytavern.app/extensions/stable-diffusion/)
+- [STscript](https://docs.sillytavern.app/usage/st-script/)
