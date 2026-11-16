@@ -284,6 +284,12 @@ do_start() {
     die "llama-server not healthy after ${LLAMA_WAIT_SECS}s, see $LOG_DIR/llama.log"
   log "llama-server healthy on $LLAMA_HOST:$LLAMA_PORT"
   log "ready: expose port $ST_PORT; in SillyTavern: Text Completion -> llama.cpp -> http://127.0.0.1:$LLAMA_PORT"
+  # Optional: stop the pod after IDLE_STOP_MINUTES without chat activity.
+  if [[ ${IDLE_STOP_MINUTES:-0} != 0 ]]; then
+    pkill -f "$SCRIPT_DIR/idle-stop.sh" 2>/dev/null || true
+    LOG_DIR=$LOG_DIR nohup bash "$SCRIPT_DIR/idle-stop.sh" >>"$LOG_DIR/idle-stop.log" 2>&1 &
+    log "idle auto-stop armed: $IDLE_STOP_MINUTES min (log: $LOG_DIR/idle-stop.log)"
+  fi
 }
 
 do_status() {
@@ -303,5 +309,6 @@ case ${1:-start} in
 esac
 
 if [[ ${POD_FOREGROUND:-0} == 1 ]]; then
-  exec tail -n 0 -F "$LOG_DIR/llama.log" "$LOG_DIR/sillytavern.log"
+  touch "$LOG_DIR/idle-stop.log"
+  exec tail -n 0 -F "$LOG_DIR/llama.log" "$LOG_DIR/sillytavern.log" "$LOG_DIR/idle-stop.log"
 fi

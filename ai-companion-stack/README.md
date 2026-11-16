@@ -227,6 +227,10 @@ The archive holds the Basic Auth password and API keys in plain text; store it a
 - Browsers ask for the Basic Auth username and password once per session. On a phone, use **Add to Home Screen** for an app-like window.
 - More than five wrong passwords from one IP within a minute get HTTP 429 from SillyTavern's rate limiter; wait a minute.
 
+### Auto-stop when idle (no-Docker path)
+
+Set `IDLE_STOP_MINUTES` (for example `30`) as a pod environment variable or in `.env`. `scripts/idle-stop.sh` then stops the pod once neither `llama-server` nor SillyTavern has logged a request for that long, so a forgotten pod stops billing. It relies on `runpodctl` and the `RUNPOD_POD_ID` / `RUNPOD_API_KEY` variables that Runpod sets inside every pod; on other providers it disables itself. `0` (the default) turns it off. Its decisions are logged to `$DATA_ROOT/logs/idle-stop.log`.
+
 ## VRAM: read this before the first start
 
 Sizes from `https://huggingface.co/api/models/huihui-ai/Huihui-Qwen3.6-35B-A3B-abliterated-MTP-GGUF/tree/main`:
