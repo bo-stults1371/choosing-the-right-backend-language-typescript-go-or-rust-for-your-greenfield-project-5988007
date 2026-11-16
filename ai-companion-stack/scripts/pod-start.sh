@@ -191,7 +191,7 @@ install_node() {
   curl -fsSL --retry 5 -o "$RUN_DIR/$file" "$base/$file"
   echo "$sum  $RUN_DIR/$file" | sha256sum -c --quiet - || die "Node.js checksum mismatch"
   mkdir -p "$NODE_DIR"
-  tar -xJf "$RUN_DIR/$file" -C "$NODE_DIR" --strip-components=1
+  tar -xJf "$RUN_DIR/$file" -C "$NODE_DIR" --strip-components=1 --no-same-owner
   rm -f "${RUN_DIR:?}/${file:?}"
 }
 
