@@ -103,7 +103,7 @@ Plug icon → **Text Completion** → **llama.cpp** → `http://127.0.0.1:8080` 
 - [Character Design](https://docs.sillytavern.app/usage/core-concepts/characterdesign/) (official): what each card field does.
 - [Ali:Chat guide](https://rentry.co/alichat): defining a character through example dialogue.
 - [kingbri's character guide](https://rentry.co/kingbri-chara-guide): a minimal, practical walk-through.
-- [Trappu's guide](https://wikia.schneedc.com/bot-creation/trappu/creation): Ali:Chat combined with compact trait lists.
+- [Trappu's guide](https://wikia.schneedc.com/bot-creation/trappu/creation): an add-on to Ali:Chat, not a separate method. Read it for PLists (compact bracketed trait lists) after the Ali:Chat guide.
 
 ### Official documentation by feature
 
